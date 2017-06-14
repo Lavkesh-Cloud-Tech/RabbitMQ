@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  rabbitmq-service:
+    image: "${IMAGE_NAME}:${IMAGE_VERSION}"
+    ports:
+      - "5672"
+      - "15672"
+    environment:
+      - RABBITMQ_USERNAME
+      - RABBITMQ_PASSWORD
+
+networks:
+  default:
+    external:
+      name: my-first-bridge-network
